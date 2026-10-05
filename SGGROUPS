@@ -1,839 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SD Groups & Associates | Jalna</title>
+<title>SD Groups & Associates | Professional Dashboard</title>
 
-  <meta name="description"
-        content="SD Groups & Associates Jalna - Accounting, Taxation, GST, ITR, Audit, Loan and Business Registration Services.">
+<meta name="description"
+content="SD Groups & Associates Jalna - Professional Accounting, Taxation, Audit, Licences, Loan Documentation and Business Consultancy.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#263449;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:72px;
+    background:#0b3d91;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px #0003;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    display:block;
+    font-size:11px;
+    color:#dbe7ff;
+    margin-top:2px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.call-btn{
+    background:#25d366;
+    color:white;
+    padding:10px 18px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= LAYOUT ================= */
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 72px);
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:250px;
+    background:#10233f;
+    color:white;
+    padding:22px 15px;
+    position:fixed;
+    top:72px;
+    bottom:0;
+    overflow-y:auto;
+}
+
+.sidebar h4{
+    color:#8fb3ff;
+    font-size:12px;
+    text-transform:uppercase;
+    margin:18px 12px 8px;
+}
+
+.sidebar a{
+    display:block;
+    color:#dbe5f5;
+    text-decoration:none;
+    padding:12px 14px;
+    margin:3px 0;
+    border-radius:7px;
+    transition:.2s;
+}
+
+.sidebar a:hover{
+    background:#0b3d91;
+    color:white;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:30px;
+}
+
+.page-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.page-title h1{
+    color:#10233f;
+    font-size:30px;
+}
+
+.page-title p{
+    color:#667085;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 5px 20px #10233f0b;
+}
+
+.card-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#10233f;
+    margin-bottom:5px;
+}
+
+.card p{
+    color:#667085;
+    font-size:14px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:14px;
+    color:#0b3d91;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* ================= SERVICE GRID ================= */
+
+.section-title{
+    margin:35px 0 18px;
+}
+
+.section-title h2{
+    color:#10233f;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    background:white;
+    border:1px solid #e2e8f0;
+    padding:23px;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px #10233f18;
+}
+
+.service .icon{
+    font-size:35px;
+}
+
+.service h3{
+    color:#0b3d91;
+    margin:10px 0;
+}
+
+.service p{
+    font-size:14px;
+    color:#667085;
+}
+
+.service button{
+    border:0;
+    background:#0b3d91;
+    color:white;
+    padding:9px 15px;
+    border-radius:6px;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-section{
+    background:#eafff1;
+    border:1px solid #bde8cb;
+    padding:25px;
+    border-radius:12px;
+    margin-top:25px;
+}
+
+.whatsapp-section h2{
+    color:#137333;
+    margin-bottom:8px;
+}
+
+.whatsapp-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:15px;
+}
+
+.whatsapp-form input,
+.whatsapp-form textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccd5df;
+    border-radius:7px;
+    font-family:inherit;
+}
+
+.whatsapp-form textarea{
+    grid-column:1 / -1;
+    min-height:100px;
+}
+
+.whatsapp-form button{
+    grid-column:1 / -1;
+    background:#25d366;
+    color:white;
+    border:0;
+    padding:13px;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= DOCUMENTS ================= */
+
+.documents{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.document-box{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    border:1px solid #e2e8f0;
+}
+
+.document-box h3{
+    color:#0b3d91;
+    margin-bottom:12px;
+}
+
+.document-box li{
+    list-style:none;
+    padding:7px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.document-box li::before{
+    content:"✓";
+    color:green;
+    font-weight:bold;
+    margin-right:8px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    margin-top:30px;
+    background:#10233f;
+    color:white;
+    padding:30px;
+    border-radius:12px;
+}
+
+.contact h2{
+    margin-bottom:10px;
+}
+
+.contact p{
+    color:#dce5f5;
+    margin:6px 0;
+}
+
+.contact a{
+    color:#f4b400;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#667085;
+    margin-top:30px;
+}
+
+/* ================= FLOATING WHATSAPP ================= */
+
+.float-whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    background:#25d366;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    box-shadow:0 6px 20px #0003;
+    z-index:2000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    html {
-      scroll-behavior: smooth;
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #263449;
-      line-height: 1.6;
-      background: #ffffff;
+}
+
+@media(max-width:800px){
+
+    .sidebar{
+        display:none;
     }
 
-    a {
-      text-decoration: none;
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
     }
 
-    .container {
-      width: 92%;
-      max-width: 1150px;
-      margin: auto;
+    .header{
+        padding:0 15px;
     }
 
-    /* HEADER */
-
-    header {
-      background: white;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.10);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .header-right{
+        display:none;
     }
 
-    .navbar {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .cards,
+    .service-grid,
+    .documents{
+        grid-template-columns:1fr;
     }
 
-    .logo {
-      color: #0b3d91;
-      font-size: 22px;
-      font-weight: bold;
+    .whatsapp-form{
+        grid-template-columns:1fr;
     }
 
-    .logo small {
-      display: block;
-      color: #777;
-      font-size: 11px;
-      letter-spacing: 1px;
+    .whatsapp-form textarea,
+    .whatsapp-form button{
+        grid-column:auto;
     }
 
-    nav a {
-      color: #10233f;
-      margin-left: 25px;
-      font-weight: bold;
-    }
+}
 
-    nav a:hover {
-      color: #0b3d91;
-    }
-
-    .menu {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      background: linear-gradient(135deg, #0b3d91, #10233f);
-      color: white;
-      padding: 90px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .hero h5 {
-      color: #f4b400;
-      font-size: 16px;
-      letter-spacing: 1px;
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      line-height: 1.1;
-      margin: 15px 0;
-    }
-
-    .hero h1 span {
-      color: #f4b400;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #e7efff;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 5px;
-    }
-
-    .btn-primary {
-      background: #f4b400;
-      color: #111;
-    }
-
-    .btn-white {
-      background: white;
-      color: #0b3d91;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 28px;
-      border-radius: 18px;
-    }
-
-    .hero-card h3 {
-      margin-bottom: 15px;
-    }
-
-    .hero-card li {
-      list-style: none;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-
-    /* SECTION */
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 35px;
-      color: #10233f;
-    }
-
-    .section-title p {
-      color: #667085;
-      margin-top: 8px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 23px;
-    }
-
-    .service-card {
-      padding: 28px;
-      border: 1px solid #e3e8f0;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(16,35,63,0.07);
-      background: white;
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(16,35,63,0.12);
-    }
-
-    .service-icon {
-      font-size: 35px;
-    }
-
-    .service-card h3 {
-      color: #0b3d91;
-      margin: 10px 0;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #f5f8fc;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about h2 {
-      font-size: 35px;
-      color: #10233f;
-      margin-bottom: 15px;
-    }
-
-    .about-list li {
-      list-style: none;
-      padding: 9px 0;
-    }
-
-    .about-list li::before {
-      content: "✓";
-      color: green;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .about-box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .about-box h3 {
-      color: #0b3d91;
-      margin-bottom: 10px;
-    }
-
-    /* PROCESS */
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 25px;
-    }
-
-    .process-card {
-      text-align: center;
-      padding: 30px;
-      border: 1px solid #e4e8ef;
-      border-radius: 15px;
-    }
-
-    .process-number {
-      width: 50px;
-      height: 50px;
-      background: #0b3d91;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .process-card h3 {
-      margin: 15px 0 8px;
-      color: #10233f;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #10233f;
-      color: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-    }
-
-    .contact h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      color: #dce5f5;
-      margin: 8px 0;
-    }
-
-    .contact-box {
-      background: rgba(255,255,255,0.08);
-      padding: 28px;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .contact-box a {
-      display: block;
-      color: white;
-      margin: 15px 0;
-      font-size: 17px;
-    }
-
-    .contact-box a:hover {
-      color: #f4b400;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #25D366;
-      color: white;
-      padding: 14px 20px;
-      border-radius: 50px;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      z-index: 2000;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #08172b;
-      color: #b9c5d8;
-      text-align: center;
-      padding: 25px;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:800px) {
-
-      .menu {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 15px 5%;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      }
-
-      nav.active {
-        display: block;
-      }
-
-      nav a {
-        display: block;
-        margin: 15px 0;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-    }
-
-    @media(max-width:520px) {
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .section-title h2,
-      .about h2,
-      .contact h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-<header>
-  <div class="container navbar">
+<header class="header">
 
-    <a href="#home" class="logo">
-      SD GROUPS & ASSOCIATES
-      <small>Tax Consultant & Project Consultant • Jalna</small>
-    </a>
+    <div class="logo">
+        SD GROUPS & ASSOCIATES
+        <span>Tax Consultant & Project Consultant • Jalna</span>
+    </div>
 
-    <div class="menu" onclick="toggleMenu()">☰</div>
+    <div class="header-right">
 
-    <nav id="nav">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
-    </nav>
+        <a
+        class="call-btn"
+        href="tel:+919370460237">
+        📞 Call Now
+        </a>
 
-  </div>
+    </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= SIDEBAR ================= -->
 
-<section class="hero" id="home">
+<div class="layout">
 
-  <div class="container hero-grid">
+<aside class="sidebar">
 
-    <div>
+    <h4>Dashboard</h4>
 
-      <h5>SD GROUPS & ASSOCIATES • JALNA</h5>
+    <a href="#dashboard">🏠 Dashboard</a>
 
-      <h1>
-        Smart Solutions for
-        <span>Accounts, Tax & Business</span>
-      </h1>
+    <h4>Financial</h4>
 
-      <p>
-        Professional Accounting, Taxation, GST, ITR, Audit,
-        Loan & Business Registration services for individuals,
-        businesses and entrepreneurs.
-      </p>
+    <a href="#accounting">📊 Accounting</a>
+    <a href="#taxation">🧾 Taxation & ITR</a>
+    <a href="#gst">🏢 GST Services</a>
+    <a href="#audit">✅ Audit</a>
 
-      <a href="#contact" class="btn btn-primary">
-        Get Consultation
-      </a>
+    <h4>Business</h4>
 
-      <a
-        href="https://wa.me/919370460237"
-        target="_blank"
-        class="btn btn-white">
-        WhatsApp Us
-      </a>
+    <a href="#licences">📜 All Licences</a>
+    <a href="#loans">🏦 Loan Documents</a>
+    <a href="#projects">📋 Project Reports</a>
 
-    </div>
+    <h4>Client Support</h4>
+
+    <a href="#whatsapp">💬 WhatsApp Message</a>
+    <a href="#contact">📞 Contact Us</a>
+
+</aside>
 
 
-    <div class="hero-card">
+<!-- ================= MAIN ================= -->
 
-      <h3>Our Core Services</h3>
+<main class="main">
 
-      <ul>
-        <li>✓ Accounting & Bookkeeping</li>
-        <li>✓ Income Tax & ITR Filing</li>
-        <li>✓ GST Registration & Returns</li>
-        <li>✓ Audit & Compliance</li>
-        <li>✓ Loan / Project Consultancy</li>
-        <li>✓ Business Registration</li>
-      </ul>
+<section id="dashboard">
+
+    <div class="page-title">
+
+        <div>
+            <h1>Professional Dashboard</h1>
+            <p>
+                Accounting • Taxation • Audit • Licences • Loans
+            </p>
+        </div>
 
     </div>
 
-  </div>
+
+    <!-- DASHBOARD CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Accounting</h3>
+            <p>Complete accounting and financial reporting services.</p>
+            <a href="#accounting">View Services →</a>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Taxation</h3>
+            <p>Income Tax, ITR and professional tax consultancy.</p>
+            <a href="#taxation">View Services →</a>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">📜</div>
+            <h3>Licences</h3>
+            <p>Business registrations and required licences.</p>
+            <a href="#licences">View Licences →</a>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">🏦</div>
+            <h3>Loans</h3>
+            <p>Loan documentation and project consultancy.</p>
+            <a href="#loans">View Documents →</a>
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
-<section id="services">
+<section id="accounting">
 
-  <div class="container">
+<div class="section-title">
+    <h2>📊 Accounting Services</h2>
+</div>
 
-    <div class="section-title">
+<div class="service-grid">
 
-      <h2>Our Professional Services</h2>
-
-      <p>
-        Complete financial and business support under one roof.
-      </p>
-
+    <div class="service">
+        <div class="icon">📒</div>
+        <h3>Bookkeeping</h3>
+        <p>Daily accounting, ledger and transaction recording.</p>
+        <button onclick="sendWhatsApp('I need Accounting / Bookkeeping services.')">
+            Enquire
+        </button>
     </div>
 
-
-    <div class="services">
-
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <h3>Accounting</h3>
-        <p>
-          Bookkeeping, ledgers, Trial Balance,
-          Profit & Loss and Balance Sheet preparation.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🧾</div>
-        <h3>Income Tax & ITR</h3>
-        <p>
-          ITR filing, tax planning, computation
-          and income-tax related assistance.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>GST Services</h3>
-        <p>
-          GST Registration, GSTR-1, GSTR-3B,
-          reconciliation and compliance support.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">✅</div>
-        <h3>Audit & Compliance</h3>
-        <p>
-          Audit support, documentation,
-          compliance and financial reporting.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🏦</div>
-        <h3>Loan Consultancy</h3>
-        <p>
-          Business, MSME, project and other
-          loan consultancy and documentation support.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🚀</div>
-        <h3>Business Registration</h3>
-        <p>
-          Business setup, registrations,
-          licences and project documentation.
-        </p>
-      </div>
-
+    <div class="service">
+        <div class="icon">📈</div>
+        <h3>Profit & Loss</h3>
+        <p>Professional P&L and financial statement preparation.</p>
+        <button onclick="sendWhatsApp('I need Profit & Loss preparation.')">
+            Enquire
+        </button>
     </div>
 
-  </div>
+    <div class="service">
+        <div class="icon">📑</div>
+        <h3>Balance Sheet</h3>
+        <p>Balance Sheet and financial reporting support.</p>
+        <button onclick="sendWhatsApp('I need Balance Sheet preparation.')">
+            Enquire
+        </button>
+    </div>
+
+</div>
 
 </section>
 
 
-<!-- ABOUT -->
+<section id="taxation">
 
-<section class="about" id="about">
+<div class="section-title">
+    <h2>🧾 Taxation & ITR</h2>
+</div>
 
-  <div class="container about-grid">
+<div class="service-grid">
 
-    <div>
-
-      <h2>Why Choose SD Groups & Associates?</h2>
-
-      <p>
-        Professional guidance for better financial
-        and business decisions.
-      </p>
-
-      <br>
-
-      <ul class="about-list">
-
-        <li>
-          Practical and business-focused consultancy
-        </li>
-
-        <li>
-          Accounting, Tax & Project services in one place
-        </li>
-
-        <li>
-          Clear documentation and systematic process
-        </li>
-
-        <li>
-          Support for startups, traders,
-          professionals and MSMEs
-        </li>
-
-        <li>
-          Personalised consultation
-        </li>
-
-      </ul>
-
+    <div class="service">
+        <div class="icon">🧾</div>
+        <h3>ITR Filing</h3>
+        <p>Salary, Business and other eligible Income Tax Returns.</p>
+        <button onclick="sendWhatsApp('I need ITR Filing services.')">
+            WhatsApp
+        </button>
     </div>
 
-
-    <div class="about-box">
-
-      <h3>SD Groups & Associates</h3>
-
-      <p>
-        <strong>
-          Tax Consultant & Project Consultant
-        </strong>
-      </p>
-
-      <br>
-
-      <p>
-        📍 Shankar Nagar,
-        Old Tahsil Office Opposite,
-        Old Jalna,
-        Maharashtra – 431203
-      </p>
-
-      <br>
-
-      <p>
-        <strong>Services:</strong>
-        ITR • GST • Loan • Business Registration •
-        Accounting • Audit
-      </p>
-
+    <div class="service">
+        <div class="icon">💰</div>
+        <h3>Tax Consultancy</h3>
+        <p>Tax computation and professional taxation guidance.</p>
+        <button onclick="sendWhatsApp('I need Tax Consultancy.')">
+            WhatsApp
+        </button>
     </div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- PROCESS -->
+<section id="gst">
 
-<section id="process">
+<div class="section-title">
+    <h2>🏢 GST Services</h2>
+</div>
 
-  <div class="container">
+<div class="service-grid">
 
-    <div class="section-title">
-
-      <h2>Our Simple Process</h2>
-
-      <p>
-        Start your work with us quickly and professionally.
-      </p>
-
+    <div class="service">
+        <div class="icon">📝</div>
+        <h3>GST Registration</h3>
+        <p>GST registration and related documentation support.</p>
+        <button onclick="sendWhatsApp('I need GST Registration.')">
+            Enquire
+        </button>
     </div>
 
-
-    <div class="process">
-
-      <div class="process-card">
-
-        <div class="process-number">01</div>
-
-        <h3>Contact</h3>
-
-        <p>
-          Call or WhatsApp us and tell us
-          about your requirement.
-        </p>
-
-      </div>
-
-
-      <div class="process-card">
-
-        <div class="process-number">02</div>
-
-        <h3>Consultation</h3>
-
-        <p>
-          We understand your business,
-          documents and financial requirement.
-        </p>
-
-      </div>
-
-
-      <div class="process-card">
-
-        <div class="process-number">03</div>
-
-        <h3>Solution</h3>
-
-        <p>
-          We prepare the required filing,
-          report, project documentation or solution.
-        </p>
-
-      </div>
-
+    <div class="service">
+        <div class="icon">📤</div>
+        <h3>GST Returns</h3>
+        <p>GSTR-1, GSTR-3B and GST compliance assistance.</p>
+        <button onclick="sendWhatsApp('I need GST Return Filing.')">
+            Enquire
+        </button>
     </div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- CONTACT -->
+<section id="audit">
 
-<section class="contact" id="contact">
+<div class="section-title">
+    <h2>✅ Audit & Compliance</h2>
+</div>
 
-  <div class="container contact-grid">
+<div class="service-grid">
 
-    <div>
-
-      <h2>Let's Work Together</h2>
-
-      <p>
-        Need help with GST, ITR, Accounting,
-        Audit, Loan or Business Registration?
-      </p>
-
-      <br>
-
-      <p>
-        <strong>SD Groups & Associates</strong>
-      </p>
-
-      <p>
-        Tax Consultant & Project Consultant
-      </p>
-
-      <p>
-        Jalna, Maharashtra – 431203
-      </p>
-
+    <div class="service">
+        <div class="icon">🔍</div>
+        <h3>Audit Support</h3>
+        <p>Audit documentation and financial compliance support.</p>
+        <button onclick="sendWhatsApp('I need Audit services.')">
+            Enquire
+        </button>
     </div>
 
-
-    <div class="contact-box">
-
-      <h3>Contact Us</h3>
-
-      <a href="tel:+919370460237">
-        📞 +91 93704 60237
-      </a>
-
-      <a
-        href="https://wa.me/919370460237"
-        target="_blank">
-        💬 WhatsApp Enquiry
-      </a>
-
-      <a href="mailto:dhoneanil163@gmail.com">
-        ✉️ dhoneanil163@gmail.com
-      </a>
-
+    <div class="service">
+        <div class="icon">📋</div>
+        <h3>Compliance</h3>
+        <p>Business and tax compliance documentation support.</p>
+        <button onclick="sendWhatsApp('I need Compliance services.')">
+            Enquire
+        </button>
     </div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ================= LICENCES ================= -->
+
+<section id="licences">
+
+<div class="section-title">
+    <h2>📜 All Business Licences & Registrations</h2>
+</div>
+
+<div class="documents">
+
+<div class="document-box">
+
+<h3>Business Registrations</h3>
+
+<ul>
+<li>MSME / Udyam Registration</li>
+<li>Shop Act Registration</li>
+<li>Business Registration</li>
+<li>Partnership Firm Documentation</li>
+<li>Proprietorship Documentation</li>
+</ul>
+
+</div>
+
+
+<div class="document-box">
+
+<h3>Tax & Regulatory</h3>
+
+<ul>
+<li>GST Registration</li>
+<li>Professional Tax</li>
+<li>Income Tax Related Services</li>
+<li>GST Compliance</li>
+<li>Tax Documentation</li>
+</ul>
+
+</div>
+
+
+<div class="document-box">
+
+<h3>Food & Other Licences</h3>
+
+<ul>
+<li>FSSAI Registration / Licence</li>
+<li>Legal Metrology Support</li>
+<li>Shop & Establishment Support</li>
+<li>Business Licence Consultancy</li>
+</ul>
+
+</div>
+
+
+<div class="document-box">
+
+<h3>Project Related</h3>
+
+<ul>
+<li>DPR Preparation</li>
+<li>CMA Data</li>
+<li>Project Report</li>
+<li>Financial Projections</li>
+<li>Bank Documentation</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LOANS ================= -->
+
+<section id="loans">
+
+<div class="section-title">
+    <h2>🏦 Loan Documentation</h2>
+</div>
+
+<div class="documents">
+
+<div class="document-box">
+
+<h3>Loan Services</h3>
+
+<ul>
+<li>Business Loan</li>
+<li>MSME Loan</li>
+<li>Project Loan</li>
+<li>Working Capital</li>
+<li>Term Loan Consultancy</li>
+</ul>
+
+</div>
+
+
+<div class="document-box">
+
+<h3>Loan Documents</h3>
+
+<ul>
+<li>Project Report / DPR</li>
+<li>CMA Data</li>
+<li>Profit & Loss</li>
+<li>Balance Sheet</li>
+<li>Cash Flow Statement</li>
+<li>Projected Financial Statements</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="section-title">
+    <h2>📋 Project Consultancy</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="service">
+<div class="icon">📊</div>
+<h3>DPR Preparation</h3>
+<p>Bank-ready Detailed Project Reports for eligible business requirements.</p>
+<button onclick="sendWhatsApp('I need DPR / Project Report.')">
+WhatsApp
+</button>
+</div>
+
+<div class="service">
+<div class="icon">🏦</div>
+<h3>CMA Data</h3>
+<p>Financial projections and CMA-related documentation support.</p>
+<button onclick="sendWhatsApp('I need CMA Data preparation.')">
+WhatsApp
+</button>
+</div>
+
+<div class="service">
+<div class="icon">💼</div>
+<h3>Business Planning</h3>
+<p>Business model, financial planning and project consultancy.</p>
+<button onclick="sendWhatsApp('I need Business Planning Consultancy.')">
+WhatsApp
+</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<section id="whatsapp">
+
+<div class="whatsapp-section">
+
+<h2>💬 Direct WhatsApp Message</h2>
+
+<p>
+Send your requirement directly to SD Groups & Associates.
+</p>
+
+<div class="whatsapp-form">
+
+<input
+id="customerName"
+type="text"
+placeholder="Your Name">
+
+<input
+id="customerMobile"
+type="tel"
+placeholder="Mobile Number">
+
+<textarea
+id="customerMessage"
+placeholder="Write your requirement..."></textarea>
+
+<button onclick="sendCustomWhatsApp()">
+📲 Send Direct WhatsApp Message
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2>SD Groups & Associates</h2>
+
+<p>
+<strong>Tax Consultant & Project Consultant</strong>
+</p>
+
+<p>
+📍 Shankar Nagar, Old Tahsil Office Opposite,
+Old Jalna, Maharashtra – 431203
+</p>
+
+<p>
+📞 <a href="tel:+919370460237">
++91 93704 60237
+</a>
+</p>
+
+<p>
+✉️
+<a href="mailto:dhoneanil163@gmail.com">
+dhoneanil163@gmail.com
+</a>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="footer">
+
+© 2026 SD Groups & Associates, Jalna.
+All Rights Reserved.
+
+<br>
+
+Accounting • Taxation • GST • ITR • Audit • Licences • Loans
+
+</div>
+
+</main>
+
+</div>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
-  class="whatsapp"
-  href="https://wa.me/919370460237"
-  target="_blank">
+class="float-whatsapp"
+href="https://wa.me/919370460237"
+target="_blank">
 
-  WhatsApp
+💬 WhatsApp
 
 </a>
 
 
-<!-- FOOTER -->
-
-<footer>
-
-  <p>
-    © 2026 SD Groups & Associates, Jalna.
-    All Rights Reserved.
-  </p>
-
-  <p>
-    Accounting • Taxation • GST • ITR • Audit •
-    Loan • Business Registration
-  </p>
-
-</footer>
-
-
-<!-- JAVASCRIPT -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-function toggleMenu() {
+function sendWhatsApp(message){
 
-  const nav = document.getElementById("nav");
+    const phone = "919370460237";
 
-  nav.classList.toggle("active");
+    const url =
+    "https://wa.me/" +
+    phone +
+    "?text=" +
+    encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+
+function sendCustomWhatsApp(){
+
+    const name =
+    document.getElementById("customerName").value;
+
+    const mobile =
+    document.getElementById("customerMobile").value;
+
+    const message =
+    document.getElementById("customerMessage").value;
+
+    if(name === "" || message === ""){
+
+        alert("Please enter your Name and Requirement.");
+
+        return;
+
+    }
+
+    const finalMessage =
+    "Hello SD Groups & Associates,%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Mobile: " + mobile + "%0A" +
+    "Requirement: " + message;
+
+    window.open(
+        "https://wa.me/919370460237?text=" +
+        encodeURIComponent(
+            "Hello SD Groups & Associates,\n\n" +
+            "Name: " + name + "\n" +
+            "Mobile: " + mobile + "\n" +
+            "Requirement: " + message
+        ),
+        "_blank"
+    );
 
 }
 
