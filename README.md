@@ -1,124 +1,166 @@
 # SD Groups & Associates
 
-## Tax Consultant & Project Consultant • Jalna
+## Professional Accounting, Taxation & Business Consultancy Dashboard
 
-**SD Groups & Associates** is a professional consultancy firm based in Jalna, Maharashtra, providing Accounting, Taxation, GST, ITR, Audit, Loan and Business Consultancy services.
+SD Groups & Associates, Jalna is a professional consultancy firm providing Accounting, Taxation, GST, ITR, Audit, Business Licence, Loan Documentation and Project Consultancy services.
 
 ---
 
-## 📌 Our Services
+## 🚀 Website Features
 
-### 📊 Accounting
+- 🏠 Professional Dashboard
+- 📊 Accounting Services
+- 🧾 Taxation & ITR Services
+- 🏢 GST Registration & Returns
+- ✅ Audit & Compliance
+- 📜 Business Licences & Registrations
+- 🏦 Loan Documentation
+- 📋 DPR / Project Report
+- 📈 CMA Data & Financial Projections
+- 💬 Direct WhatsApp Message
+- 📞 Direct Call Button
+- 📱 Mobile Responsive Design
+
+---
+
+## 📊 Accounting Services
+
 - Bookkeeping
 - Ledger
 - Trial Balance
-- Profit & Loss Account
+- Profit & Loss
 - Balance Sheet
 - Financial Statements
+- Accounting Consultancy
 
-### 🧾 Income Tax & ITR
+---
+
+## 🧾 Taxation Services
+
 - Income Tax Return Filing
-- Tax Computation
-- Tax Consultancy
 - Business ITR
 - Salary ITR
+- Income Tax Consultancy
+- Tax Computation
+- Tax Planning Support
 
-### 🏢 GST Services
+---
+
+## 🏢 GST Services
+
 - GST Registration
-- GST Return Filing
 - GSTR-1
 - GSTR-3B
+- GST Return Filing
 - GST Reconciliation
 - GST Compliance
 
-### ✅ Audit & Compliance
+---
+
+## ✅ Audit & Compliance
+
 - Audit Support
 - Financial Documentation
 - Business Compliance
 - Tax Compliance
+- Financial Reporting
 
-### 🏦 Loan Consultancy
+---
+
+## 📜 Licences & Registrations
+
+- MSME / Udyam Registration
+- Shop Act Registration
+- GST Registration
+- Professional Tax
+- FSSAI Registration / Licence
+- Business Registration
+- Partnership Firm Documentation
+- Proprietorship Documentation
+- Legal Metrology Support
+- Other Business Licence Consultancy
+
+---
+
+## 🏦 Loan Consultancy
+
+We provide documentation and consultancy support for various eligible business financing requirements.
+
+### Loan Services
+
 - Business Loan
 - MSME Loan
 - Project Loan
+- Term Loan
+- Working Capital
 - Loan Documentation
-- Bank Project Report
 
-### 📋 Project Consultancy
-- DPR Preparation
+### Loan Documents
+
+- Detailed Project Report
 - CMA Data
+- Profit & Loss
+- Balance Sheet
+- Cash Flow Statement
+- Projected Financial Statements
+- Business Plan
+
+---
+
+## 📋 Project Consultancy
+
+- DPR Preparation
 - Project Report
+- CMA Data
+- Business Plan
 - Financial Projections
-- Business Planning
-
-### 🚀 Business Registration
-- Business Registration
-- MSME Registration
-- Startup Support
-- Business Documentation
+- Bank Documentation
+- Project Consultancy
 
 ---
 
-## ⭐ Why Choose SD Groups & Associates?
+## 💬 Direct WhatsApp
 
-- Professional Consultancy
-- Practical Business Solutions
-- Systematic Documentation
-- Accounting & Tax Support
-- Loan & Project Consultancy
-- Support for MSMEs and Entrepreneurs
-- Personalised Client Support
-
----
-
-## 📍 Office Address
-
-**SD Groups & Associates**  
-Tax Consultant & Project Consultant
-
-Shankar Nagar,  
-Old Tahsil Office Opposite,  
-Old Jalna, Maharashtra – 431203
-
----
-
-## 📞 Contact Us
+Customers can send their requirements directly through WhatsApp.
 
 **Mobile:** +91 93704 60237
 
-**WhatsApp:**  
+**WhatsApp:**
 https://wa.me/919370460237
 
-**Email:**  
-dhoneanil163@gmail.com
+---
+
+## 📞 Contact
+
+### SD Groups & Associates
+
+**Tax Consultant & Project Consultant**
+
+📍 Shankar Nagar, Old Tahsil Office Opposite,  
+Old Jalna, Maharashtra – 431203
+
+📞 **+91 93704 60237**
+
+✉️ **dhoneanil163@gmail.com**
 
 ---
 
-## 🌐 Website
+## 🛠️ Technology
 
-Our website provides information about our professional services and allows customers to contact us directly.
-
----
-
-## 🛠️ Website Technology
+This website is created using:
 
 - HTML5
 - CSS3
 - JavaScript
-- Responsive Design
+- Responsive Web Design
 - GitHub Pages
 
 ---
 
-## 🎯 Our Mission
+## 📁 Project Structure
 
-To provide reliable, professional and practical Accounting, Taxation, GST, Loan and Business Consultancy services to individuals, businesses, entrepreneurs and MSMEs.
-
----
-
-## © Copyright
-
-© 2026 **SD Groups & Associates, Jalna**  
-All Rights Reserved.
-
-**Accounting • Taxation • GST • ITR • Audit • Loan • Business Registration**
+```text
+SD-Groups-Associates/
+│
+├── index.html
+└── README.md
